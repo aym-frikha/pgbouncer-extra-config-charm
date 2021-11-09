@@ -1,0 +1,19 @@
+options:
+   extra_db_config:
+    type: string
+    description: |
+      List of databases configurations that pgbouncer will manage.
+   auth_user:
+    type: string
+    description: >
+      If auth_user is set, then any user not specified in
+      auth_file will be queried through the auth_query query from pg_shadow in the database,
+      using auth_user.
+      Example: test_auth
+   auth_query:
+    type: string
+    description: >
+      If auth_user is set, then any user not specified in
+      auth_file will be queried through the auth_query query from pg_shadow in the database,
+      using auth_user.
+      Example: SELECT usename, passwd FROM pg_shadow WHERE usename = $1

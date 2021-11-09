@@ -1,0 +1,27 @@
+# Copyright 2021 pguimaraes
+# See LICENSE file for licensing details.
+name: charm-pgbouncer-extra-config
+summary: |
+  Add pgbouncer principal charm extra configurations that can
+  change it's normal behaviour.
+maintainer: Aymen Frikha <aymen.frikha@canonical.com>
+description: |
+  Pgbouncer is the connection pooler for postgresql.
+  .
+  This charm provides extra configuration to pgbouncer service
+  to support multiple databases as well as user management.
+tags:
+- postgresql
+- pgbouncer
+- misc
+series:
+- focal
+subordinate: true
+provides:
+  pgbouncer-extra-config:
+    interface: pgbouncer-extra-config
+    scope: container
+requires:
+  juju-info:
+    interface: juju-info
+    scope: container
